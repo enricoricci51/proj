@@ -1,0 +1,6 @@
+
+# 1 "../../../../../framework/driver/mrf_miwi/src/drv_mrf_miwi_security.c"
+
+# 327
+extern char bogus;
+

@@ -1,0 +1,23 @@
+ build/miwikit_pic18f46j50_89xa/production/_ext/842993699/miwi_p2p.d  \
+ build/miwikit_pic18f46j50_89xa/production/_ext/842993699/miwi_p2p.p1:  \
+ ../../../../../framework/miwi/src/miwi_p2p.c  \
+../src/system_config/miwikit_pic18f46j50_89xa/system.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/lcd.h  \
+../../../../../framework/driver/mrf_miwi/drv_mrf_miwi_89xa.h  \
+../src/demo_output.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/eeprom.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/delay.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/system_config.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/miwi_config_p2p.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/symbol.h  \
+../../../../../framework/driver/mrf_miwi/drv_mrf_miwi.h  \
+../src/task.h  \
+../../../../../framework/miwi/miwi_p2p.h  \
+../../../../../framework/miwi/miwi_nvm.h  \
+../../../../../framework/miwi/miwi_api.h  \
+../../../../../framework/driver/mrf_miwi/drv_mrf_miwi_security.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/timer.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/miwi_config.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/button.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/spi.h  \
+../src/system_config/miwikit_pic18f46j50_89xa/config_89xa.h 

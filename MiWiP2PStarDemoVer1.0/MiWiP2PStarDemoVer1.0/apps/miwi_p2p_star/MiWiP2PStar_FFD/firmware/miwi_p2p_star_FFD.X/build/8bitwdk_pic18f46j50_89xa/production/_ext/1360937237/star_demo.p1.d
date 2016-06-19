@@ -1,0 +1,24 @@
+ build/8bitwdk_pic18f46j50_89xa/production/_ext/1360937237/star_demo.d  \
+ build/8bitwdk_pic18f46j50_89xa/production/_ext/1360937237/star_demo.p1:  \
+ ../src/star_demo.c  \
+../src/star_demo.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/system.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/lcd.h  \
+../../../../../framework/driver/mrf_miwi/drv_mrf_miwi_89xa.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/eeprom.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/delay.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/system_config.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/miwi_config_p2p.h  \
+../src/demo_output.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/console.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/symbol.h  \
+../../../../../framework/driver/mrf_miwi/drv_mrf_miwi.h  \
+../../../../../framework/miwi/miwi_p2p.h  \
+../../../../../framework/miwi/miwi_nvm.h  \
+../../../../../framework/miwi/miwi_api.h  \
+../../../../../framework/driver/mrf_miwi/drv_mrf_miwi_security.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/timer.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/miwi_config.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/spi.h  \
+../src/system_config/8bitwdk_pic18f46j50_89xa/config_89xa.h  \
+../src/task.h 
