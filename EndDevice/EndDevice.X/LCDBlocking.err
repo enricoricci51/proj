@@ -1,0 +1,25 @@
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 91 : symbol 'LCD_DATA0_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 91 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 92 : symbol 'LCD_DATA1_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 92 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 93 : symbol 'LCD_DATA2_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 93 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 94 : symbol 'LCD_DATA3_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 94 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 96 : symbol 'LCD_DATA4_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 96 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 97 : symbol 'LCD_DATA5_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 97 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 98 : symbol 'LCD_DATA6_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 98 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 99 : symbol 'LCD_DATA7_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 99 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 102 : symbol 'LCD_RS_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 102 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 103 : symbol 'LCD_RD_WR_TRIS' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 103 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 104 : symbol 'LCD_RD_WR_IO' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 104 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 105 : symbol 'LCD_RS_IO' has not been defined
+Error[1101] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 105 : lvalue required
+Error[1105] C:\Workspace\Coordinator\Microchip\Common\LCDBlocking.c 134 : symbol 'LCD_DATA0_IO' has not been defined

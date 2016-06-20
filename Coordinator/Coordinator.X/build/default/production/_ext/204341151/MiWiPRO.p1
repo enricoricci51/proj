@@ -1,0 +1,407 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;Include\GenericTypeDefs.h: 65: typedef enum _BOOL { FALSE = 0, TRUE } BOOL;
+[; ;Include\GenericTypeDefs.h: 66: typedef enum _BIT { CLEAR = 0, SET } BIT;
+[; ;Include\GenericTypeDefs.h: 73: typedef signed int INT;
+[; ;Include\GenericTypeDefs.h: 74: typedef signed char INT8;
+[; ;Include\GenericTypeDefs.h: 75: typedef signed short int INT16;
+[; ;Include\GenericTypeDefs.h: 76: typedef signed long int INT32;
+[; ;Include\GenericTypeDefs.h: 80: typedef signed long long INT64;
+[; ;Include\GenericTypeDefs.h: 84: typedef unsigned int UINT;
+[; ;Include\GenericTypeDefs.h: 85: typedef unsigned char UINT8;
+[; ;Include\GenericTypeDefs.h: 86: typedef unsigned short int UINT16;
+[; ;Include\GenericTypeDefs.h: 91: typedef unsigned long int UINT32;
+[; ;Include\GenericTypeDefs.h: 94: typedef unsigned long long UINT64;
+[; ;Include\GenericTypeDefs.h: 97: typedef union
+[; ;Include\GenericTypeDefs.h: 98: {
+[; ;Include\GenericTypeDefs.h: 99: UINT8 Val;
+[; ;Include\GenericTypeDefs.h: 100: struct
+[; ;Include\GenericTypeDefs.h: 101: {
+[; ;Include\GenericTypeDefs.h: 102: UINT8 b0:1;
+[; ;Include\GenericTypeDefs.h: 103: UINT8 b1:1;
+[; ;Include\GenericTypeDefs.h: 104: UINT8 b2:1;
+[; ;Include\GenericTypeDefs.h: 105: UINT8 b3:1;
+[; ;Include\GenericTypeDefs.h: 106: UINT8 b4:1;
+[; ;Include\GenericTypeDefs.h: 107: UINT8 b5:1;
+[; ;Include\GenericTypeDefs.h: 108: UINT8 b6:1;
+[; ;Include\GenericTypeDefs.h: 109: UINT8 b7:1;
+[; ;Include\GenericTypeDefs.h: 110: } bits;
+[; ;Include\GenericTypeDefs.h: 111: } UINT8_VAL, UINT8_BITS;
+[; ;Include\GenericTypeDefs.h: 113: typedef union
+[; ;Include\GenericTypeDefs.h: 114: {
+[; ;Include\GenericTypeDefs.h: 115: UINT16 Val;
+[; ;Include\GenericTypeDefs.h: 116: UINT8 v[2] ;
+[; ;Include\GenericTypeDefs.h: 117: struct 
+[; ;Include\GenericTypeDefs.h: 118: {
+[; ;Include\GenericTypeDefs.h: 119: UINT8 LB;
+[; ;Include\GenericTypeDefs.h: 120: UINT8 HB;
+[; ;Include\GenericTypeDefs.h: 121: } byte;
+[; ;Include\GenericTypeDefs.h: 122: struct 
+[; ;Include\GenericTypeDefs.h: 123: {
+[; ;Include\GenericTypeDefs.h: 124: UINT8 b0:1;
+[; ;Include\GenericTypeDefs.h: 125: UINT8 b1:1;
+[; ;Include\GenericTypeDefs.h: 126: UINT8 b2:1;
+[; ;Include\GenericTypeDefs.h: 127: UINT8 b3:1;
+[; ;Include\GenericTypeDefs.h: 128: UINT8 b4:1;
+[; ;Include\GenericTypeDefs.h: 129: UINT8 b5:1;
+[; ;Include\GenericTypeDefs.h: 130: UINT8 b6:1;
+[; ;Include\GenericTypeDefs.h: 131: UINT8 b7:1;
+[; ;Include\GenericTypeDefs.h: 132: UINT8 b8:1;
+[; ;Include\GenericTypeDefs.h: 133: UINT8 b9:1;
+[; ;Include\GenericTypeDefs.h: 134: UINT8 b10:1;
+[; ;Include\GenericTypeDefs.h: 135: UINT8 b11:1;
+[; ;Include\GenericTypeDefs.h: 136: UINT8 b12:1;
+[; ;Include\GenericTypeDefs.h: 137: UINT8 b13:1;
+[; ;Include\GenericTypeDefs.h: 138: UINT8 b14:1;
+[; ;Include\GenericTypeDefs.h: 139: UINT8 b15:1;
+[; ;Include\GenericTypeDefs.h: 140: } bits;
+[; ;Include\GenericTypeDefs.h: 141: } UINT16_VAL, UINT16_BITS;
+[; ;Include\GenericTypeDefs.h: 185: typedef union
+[; ;Include\GenericTypeDefs.h: 186: {
+[; ;Include\GenericTypeDefs.h: 187: UINT32 Val;
+[; ;Include\GenericTypeDefs.h: 188: UINT16 w[2] ;
+[; ;Include\GenericTypeDefs.h: 189: UINT8 v[4] ;
+[; ;Include\GenericTypeDefs.h: 190: struct 
+[; ;Include\GenericTypeDefs.h: 191: {
+[; ;Include\GenericTypeDefs.h: 192: UINT16 LW;
+[; ;Include\GenericTypeDefs.h: 193: UINT16 HW;
+[; ;Include\GenericTypeDefs.h: 194: } word;
+[; ;Include\GenericTypeDefs.h: 195: struct 
+[; ;Include\GenericTypeDefs.h: 196: {
+[; ;Include\GenericTypeDefs.h: 197: UINT8 LB;
+[; ;Include\GenericTypeDefs.h: 198: UINT8 HB;
+[; ;Include\GenericTypeDefs.h: 199: UINT8 UB;
+[; ;Include\GenericTypeDefs.h: 200: UINT8 MB;
+[; ;Include\GenericTypeDefs.h: 201: } byte;
+[; ;Include\GenericTypeDefs.h: 202: struct 
+[; ;Include\GenericTypeDefs.h: 203: {
+[; ;Include\GenericTypeDefs.h: 204: UINT16_VAL low;
+[; ;Include\GenericTypeDefs.h: 205: UINT16_VAL high;
+[; ;Include\GenericTypeDefs.h: 206: }wordUnion;
+[; ;Include\GenericTypeDefs.h: 207: struct 
+[; ;Include\GenericTypeDefs.h: 208: {
+[; ;Include\GenericTypeDefs.h: 209: UINT8 b0:1;
+[; ;Include\GenericTypeDefs.h: 210: UINT8 b1:1;
+[; ;Include\GenericTypeDefs.h: 211: UINT8 b2:1;
+[; ;Include\GenericTypeDefs.h: 212: UINT8 b3:1;
+[; ;Include\GenericTypeDefs.h: 213: UINT8 b4:1;
+[; ;Include\GenericTypeDefs.h: 214: UINT8 b5:1;
+[; ;Include\GenericTypeDefs.h: 215: UINT8 b6:1;
+[; ;Include\GenericTypeDefs.h: 216: UINT8 b7:1;
+[; ;Include\GenericTypeDefs.h: 217: UINT8 b8:1;
+[; ;Include\GenericTypeDefs.h: 218: UINT8 b9:1;
+[; ;Include\GenericTypeDefs.h: 219: UINT8 b10:1;
+[; ;Include\GenericTypeDefs.h: 220: UINT8 b11:1;
+[; ;Include\GenericTypeDefs.h: 221: UINT8 b12:1;
+[; ;Include\GenericTypeDefs.h: 222: UINT8 b13:1;
+[; ;Include\GenericTypeDefs.h: 223: UINT8 b14:1;
+[; ;Include\GenericTypeDefs.h: 224: UINT8 b15:1;
+[; ;Include\GenericTypeDefs.h: 225: UINT8 b16:1;
+[; ;Include\GenericTypeDefs.h: 226: UINT8 b17:1;
+[; ;Include\GenericTypeDefs.h: 227: UINT8 b18:1;
+[; ;Include\GenericTypeDefs.h: 228: UINT8 b19:1;
+[; ;Include\GenericTypeDefs.h: 229: UINT8 b20:1;
+[; ;Include\GenericTypeDefs.h: 230: UINT8 b21:1;
+[; ;Include\GenericTypeDefs.h: 231: UINT8 b22:1;
+[; ;Include\GenericTypeDefs.h: 232: UINT8 b23:1;
+[; ;Include\GenericTypeDefs.h: 233: UINT8 b24:1;
+[; ;Include\GenericTypeDefs.h: 234: UINT8 b25:1;
+[; ;Include\GenericTypeDefs.h: 235: UINT8 b26:1;
+[; ;Include\GenericTypeDefs.h: 236: UINT8 b27:1;
+[; ;Include\GenericTypeDefs.h: 237: UINT8 b28:1;
+[; ;Include\GenericTypeDefs.h: 238: UINT8 b29:1;
+[; ;Include\GenericTypeDefs.h: 239: UINT8 b30:1;
+[; ;Include\GenericTypeDefs.h: 240: UINT8 b31:1;
+[; ;Include\GenericTypeDefs.h: 241: } bits;
+[; ;Include\GenericTypeDefs.h: 242: } UINT32_VAL;
+[; ;Include\GenericTypeDefs.h: 246: typedef union
+[; ;Include\GenericTypeDefs.h: 247: {
+[; ;Include\GenericTypeDefs.h: 248: UINT64 Val;
+[; ;Include\GenericTypeDefs.h: 249: UINT32 d[2] ;
+[; ;Include\GenericTypeDefs.h: 250: UINT16 w[4] ;
+[; ;Include\GenericTypeDefs.h: 251: UINT8 v[8] ;
+[; ;Include\GenericTypeDefs.h: 252: struct 
+[; ;Include\GenericTypeDefs.h: 253: {
+[; ;Include\GenericTypeDefs.h: 254: UINT32 LD;
+[; ;Include\GenericTypeDefs.h: 255: UINT32 HD;
+[; ;Include\GenericTypeDefs.h: 256: } dword;
+[; ;Include\GenericTypeDefs.h: 257: struct 
+[; ;Include\GenericTypeDefs.h: 258: {
+[; ;Include\GenericTypeDefs.h: 259: UINT16 LW;
+[; ;Include\GenericTypeDefs.h: 260: UINT16 HW;
+[; ;Include\GenericTypeDefs.h: 261: UINT16 UW;
+[; ;Include\GenericTypeDefs.h: 262: UINT16 MW;
+[; ;Include\GenericTypeDefs.h: 263: } word;
+[; ;Include\GenericTypeDefs.h: 264: struct 
+[; ;Include\GenericTypeDefs.h: 265: {
+[; ;Include\GenericTypeDefs.h: 266: UINT8 b0:1;
+[; ;Include\GenericTypeDefs.h: 267: UINT8 b1:1;
+[; ;Include\GenericTypeDefs.h: 268: UINT8 b2:1;
+[; ;Include\GenericTypeDefs.h: 269: UINT8 b3:1;
+[; ;Include\GenericTypeDefs.h: 270: UINT8 b4:1;
+[; ;Include\GenericTypeDefs.h: 271: UINT8 b5:1;
+[; ;Include\GenericTypeDefs.h: 272: UINT8 b6:1;
+[; ;Include\GenericTypeDefs.h: 273: UINT8 b7:1;
+[; ;Include\GenericTypeDefs.h: 274: UINT8 b8:1;
+[; ;Include\GenericTypeDefs.h: 275: UINT8 b9:1;
+[; ;Include\GenericTypeDefs.h: 276: UINT8 b10:1;
+[; ;Include\GenericTypeDefs.h: 277: UINT8 b11:1;
+[; ;Include\GenericTypeDefs.h: 278: UINT8 b12:1;
+[; ;Include\GenericTypeDefs.h: 279: UINT8 b13:1;
+[; ;Include\GenericTypeDefs.h: 280: UINT8 b14:1;
+[; ;Include\GenericTypeDefs.h: 281: UINT8 b15:1;
+[; ;Include\GenericTypeDefs.h: 282: UINT8 b16:1;
+[; ;Include\GenericTypeDefs.h: 283: UINT8 b17:1;
+[; ;Include\GenericTypeDefs.h: 284: UINT8 b18:1;
+[; ;Include\GenericTypeDefs.h: 285: UINT8 b19:1;
+[; ;Include\GenericTypeDefs.h: 286: UINT8 b20:1;
+[; ;Include\GenericTypeDefs.h: 287: UINT8 b21:1;
+[; ;Include\GenericTypeDefs.h: 288: UINT8 b22:1;
+[; ;Include\GenericTypeDefs.h: 289: UINT8 b23:1;
+[; ;Include\GenericTypeDefs.h: 290: UINT8 b24:1;
+[; ;Include\GenericTypeDefs.h: 291: UINT8 b25:1;
+[; ;Include\GenericTypeDefs.h: 292: UINT8 b26:1;
+[; ;Include\GenericTypeDefs.h: 293: UINT8 b27:1;
+[; ;Include\GenericTypeDefs.h: 294: UINT8 b28:1;
+[; ;Include\GenericTypeDefs.h: 295: UINT8 b29:1;
+[; ;Include\GenericTypeDefs.h: 296: UINT8 b30:1;
+[; ;Include\GenericTypeDefs.h: 297: UINT8 b31:1;
+[; ;Include\GenericTypeDefs.h: 298: UINT8 b32:1;
+[; ;Include\GenericTypeDefs.h: 299: UINT8 b33:1;
+[; ;Include\GenericTypeDefs.h: 300: UINT8 b34:1;
+[; ;Include\GenericTypeDefs.h: 301: UINT8 b35:1;
+[; ;Include\GenericTypeDefs.h: 302: UINT8 b36:1;
+[; ;Include\GenericTypeDefs.h: 303: UINT8 b37:1;
+[; ;Include\GenericTypeDefs.h: 304: UINT8 b38:1;
+[; ;Include\GenericTypeDefs.h: 305: UINT8 b39:1;
+[; ;Include\GenericTypeDefs.h: 306: UINT8 b40:1;
+[; ;Include\GenericTypeDefs.h: 307: UINT8 b41:1;
+[; ;Include\GenericTypeDefs.h: 308: UINT8 b42:1;
+[; ;Include\GenericTypeDefs.h: 309: UINT8 b43:1;
+[; ;Include\GenericTypeDefs.h: 310: UINT8 b44:1;
+[; ;Include\GenericTypeDefs.h: 311: UINT8 b45:1;
+[; ;Include\GenericTypeDefs.h: 312: UINT8 b46:1;
+[; ;Include\GenericTypeDefs.h: 313: UINT8 b47:1;
+[; ;Include\GenericTypeDefs.h: 314: UINT8 b48:1;
+[; ;Include\GenericTypeDefs.h: 315: UINT8 b49:1;
+[; ;Include\GenericTypeDefs.h: 316: UINT8 b50:1;
+[; ;Include\GenericTypeDefs.h: 317: UINT8 b51:1;
+[; ;Include\GenericTypeDefs.h: 318: UINT8 b52:1;
+[; ;Include\GenericTypeDefs.h: 319: UINT8 b53:1;
+[; ;Include\GenericTypeDefs.h: 320: UINT8 b54:1;
+[; ;Include\GenericTypeDefs.h: 321: UINT8 b55:1;
+[; ;Include\GenericTypeDefs.h: 322: UINT8 b56:1;
+[; ;Include\GenericTypeDefs.h: 323: UINT8 b57:1;
+[; ;Include\GenericTypeDefs.h: 324: UINT8 b58:1;
+[; ;Include\GenericTypeDefs.h: 325: UINT8 b59:1;
+[; ;Include\GenericTypeDefs.h: 326: UINT8 b60:1;
+[; ;Include\GenericTypeDefs.h: 327: UINT8 b61:1;
+[; ;Include\GenericTypeDefs.h: 328: UINT8 b62:1;
+[; ;Include\GenericTypeDefs.h: 329: UINT8 b63:1;
+[; ;Include\GenericTypeDefs.h: 330: } bits;
+[; ;Include\GenericTypeDefs.h: 331: } UINT64_VAL;
+[; ;Include\GenericTypeDefs.h: 337: typedef void VOID;
+[; ;Include\GenericTypeDefs.h: 339: typedef char CHAR8;
+[; ;Include\GenericTypeDefs.h: 340: typedef unsigned char UCHAR8;
+[; ;Include\GenericTypeDefs.h: 342: typedef unsigned char BYTE;
+[; ;Include\GenericTypeDefs.h: 343: typedef unsigned short int WORD;
+[; ;Include\GenericTypeDefs.h: 344: typedef unsigned long DWORD;
+[; ;Include\GenericTypeDefs.h: 347: typedef unsigned long long QWORD;
+[; ;Include\GenericTypeDefs.h: 348: typedef signed char CHAR;
+[; ;Include\GenericTypeDefs.h: 349: typedef signed short int SHORT;
+[; ;Include\GenericTypeDefs.h: 350: typedef signed long LONG;
+[; ;Include\GenericTypeDefs.h: 353: typedef signed long long LONGLONG;
+[; ;Include\GenericTypeDefs.h: 354: typedef union
+[; ;Include\GenericTypeDefs.h: 355: {
+[; ;Include\GenericTypeDefs.h: 356: BYTE Val;
+[; ;Include\GenericTypeDefs.h: 357: struct 
+[; ;Include\GenericTypeDefs.h: 358: {
+[; ;Include\GenericTypeDefs.h: 359: BYTE b0:1;
+[; ;Include\GenericTypeDefs.h: 360: BYTE b1:1;
+[; ;Include\GenericTypeDefs.h: 361: BYTE b2:1;
+[; ;Include\GenericTypeDefs.h: 362: BYTE b3:1;
+[; ;Include\GenericTypeDefs.h: 363: BYTE b4:1;
+[; ;Include\GenericTypeDefs.h: 364: BYTE b5:1;
+[; ;Include\GenericTypeDefs.h: 365: BYTE b6:1;
+[; ;Include\GenericTypeDefs.h: 366: BYTE b7:1;
+[; ;Include\GenericTypeDefs.h: 367: } bits;
+[; ;Include\GenericTypeDefs.h: 368: } BYTE_VAL, BYTE_BITS;
+[; ;Include\GenericTypeDefs.h: 370: typedef union
+[; ;Include\GenericTypeDefs.h: 371: {
+[; ;Include\GenericTypeDefs.h: 372: WORD Val;
+[; ;Include\GenericTypeDefs.h: 373: BYTE v[2] ;
+[; ;Include\GenericTypeDefs.h: 374: struct 
+[; ;Include\GenericTypeDefs.h: 375: {
+[; ;Include\GenericTypeDefs.h: 376: BYTE LB;
+[; ;Include\GenericTypeDefs.h: 377: BYTE HB;
+[; ;Include\GenericTypeDefs.h: 378: } byte;
+[; ;Include\GenericTypeDefs.h: 379: struct 
+[; ;Include\GenericTypeDefs.h: 380: {
+[; ;Include\GenericTypeDefs.h: 381: BYTE b0:1;
+[; ;Include\GenericTypeDefs.h: 382: BYTE b1:1;
+[; ;Include\GenericTypeDefs.h: 383: BYTE b2:1;
+[; ;Include\GenericTypeDefs.h: 384: BYTE b3:1;
+[; ;Include\GenericTypeDefs.h: 385: BYTE b4:1;
+[; ;Include\GenericTypeDefs.h: 386: BYTE b5:1;
+[; ;Include\GenericTypeDefs.h: 387: BYTE b6:1;
+[; ;Include\GenericTypeDefs.h: 388: BYTE b7:1;
+[; ;Include\GenericTypeDefs.h: 389: BYTE b8:1;
+[; ;Include\GenericTypeDefs.h: 390: BYTE b9:1;
+[; ;Include\GenericTypeDefs.h: 391: BYTE b10:1;
+[; ;Include\GenericTypeDefs.h: 392: BYTE b11:1;
+[; ;Include\GenericTypeDefs.h: 393: BYTE b12:1;
+[; ;Include\GenericTypeDefs.h: 394: BYTE b13:1;
+[; ;Include\GenericTypeDefs.h: 395: BYTE b14:1;
+[; ;Include\GenericTypeDefs.h: 396: BYTE b15:1;
+[; ;Include\GenericTypeDefs.h: 397: } bits;
+[; ;Include\GenericTypeDefs.h: 398: } WORD_VAL, WORD_BITS;
+[; ;Include\GenericTypeDefs.h: 400: typedef union
+[; ;Include\GenericTypeDefs.h: 401: {
+[; ;Include\GenericTypeDefs.h: 402: DWORD Val;
+[; ;Include\GenericTypeDefs.h: 403: WORD w[2] ;
+[; ;Include\GenericTypeDefs.h: 404: BYTE v[4] ;
+[; ;Include\GenericTypeDefs.h: 405: struct 
+[; ;Include\GenericTypeDefs.h: 406: {
+[; ;Include\GenericTypeDefs.h: 407: WORD LW;
+[; ;Include\GenericTypeDefs.h: 408: WORD HW;
+[; ;Include\GenericTypeDefs.h: 409: } word;
+[; ;Include\GenericTypeDefs.h: 410: struct 
+[; ;Include\GenericTypeDefs.h: 411: {
+[; ;Include\GenericTypeDefs.h: 412: BYTE LB;
+[; ;Include\GenericTypeDefs.h: 413: BYTE HB;
+[; ;Include\GenericTypeDefs.h: 414: BYTE UB;
+[; ;Include\GenericTypeDefs.h: 415: BYTE MB;
+[; ;Include\GenericTypeDefs.h: 416: } byte;
+[; ;Include\GenericTypeDefs.h: 417: struct 
+[; ;Include\GenericTypeDefs.h: 418: {
+[; ;Include\GenericTypeDefs.h: 419: WORD_VAL low;
+[; ;Include\GenericTypeDefs.h: 420: WORD_VAL high;
+[; ;Include\GenericTypeDefs.h: 421: }wordUnion;
+[; ;Include\GenericTypeDefs.h: 422: struct 
+[; ;Include\GenericTypeDefs.h: 423: {
+[; ;Include\GenericTypeDefs.h: 424: BYTE b0:1;
+[; ;Include\GenericTypeDefs.h: 425: BYTE b1:1;
+[; ;Include\GenericTypeDefs.h: 426: BYTE b2:1;
+[; ;Include\GenericTypeDefs.h: 427: BYTE b3:1;
+[; ;Include\GenericTypeDefs.h: 428: BYTE b4:1;
+[; ;Include\GenericTypeDefs.h: 429: BYTE b5:1;
+[; ;Include\GenericTypeDefs.h: 430: BYTE b6:1;
+[; ;Include\GenericTypeDefs.h: 431: BYTE b7:1;
+[; ;Include\GenericTypeDefs.h: 432: BYTE b8:1;
+[; ;Include\GenericTypeDefs.h: 433: BYTE b9:1;
+[; ;Include\GenericTypeDefs.h: 434: BYTE b10:1;
+[; ;Include\GenericTypeDefs.h: 435: BYTE b11:1;
+[; ;Include\GenericTypeDefs.h: 436: BYTE b12:1;
+[; ;Include\GenericTypeDefs.h: 437: BYTE b13:1;
+[; ;Include\GenericTypeDefs.h: 438: BYTE b14:1;
+[; ;Include\GenericTypeDefs.h: 439: BYTE b15:1;
+[; ;Include\GenericTypeDefs.h: 440: BYTE b16:1;
+[; ;Include\GenericTypeDefs.h: 441: BYTE b17:1;
+[; ;Include\GenericTypeDefs.h: 442: BYTE b18:1;
+[; ;Include\GenericTypeDefs.h: 443: BYTE b19:1;
+[; ;Include\GenericTypeDefs.h: 444: BYTE b20:1;
+[; ;Include\GenericTypeDefs.h: 445: BYTE b21:1;
+[; ;Include\GenericTypeDefs.h: 446: BYTE b22:1;
+[; ;Include\GenericTypeDefs.h: 447: BYTE b23:1;
+[; ;Include\GenericTypeDefs.h: 448: BYTE b24:1;
+[; ;Include\GenericTypeDefs.h: 449: BYTE b25:1;
+[; ;Include\GenericTypeDefs.h: 450: BYTE b26:1;
+[; ;Include\GenericTypeDefs.h: 451: BYTE b27:1;
+[; ;Include\GenericTypeDefs.h: 452: BYTE b28:1;
+[; ;Include\GenericTypeDefs.h: 453: BYTE b29:1;
+[; ;Include\GenericTypeDefs.h: 454: BYTE b30:1;
+[; ;Include\GenericTypeDefs.h: 455: BYTE b31:1;
+[; ;Include\GenericTypeDefs.h: 456: } bits;
+[; ;Include\GenericTypeDefs.h: 457: } DWORD_VAL;
+[; ;Include\GenericTypeDefs.h: 460: typedef union
+[; ;Include\GenericTypeDefs.h: 461: {
+[; ;Include\GenericTypeDefs.h: 462: QWORD Val;
+[; ;Include\GenericTypeDefs.h: 463: DWORD d[2] ;
+[; ;Include\GenericTypeDefs.h: 464: WORD w[4] ;
+[; ;Include\GenericTypeDefs.h: 465: BYTE v[8] ;
+[; ;Include\GenericTypeDefs.h: 466: struct 
+[; ;Include\GenericTypeDefs.h: 467: {
+[; ;Include\GenericTypeDefs.h: 468: DWORD LD;
+[; ;Include\GenericTypeDefs.h: 469: DWORD HD;
+[; ;Include\GenericTypeDefs.h: 470: } dword;
+[; ;Include\GenericTypeDefs.h: 471: struct 
+[; ;Include\GenericTypeDefs.h: 472: {
+[; ;Include\GenericTypeDefs.h: 473: WORD LW;
+[; ;Include\GenericTypeDefs.h: 474: WORD HW;
+[; ;Include\GenericTypeDefs.h: 475: WORD UW;
+[; ;Include\GenericTypeDefs.h: 476: WORD MW;
+[; ;Include\GenericTypeDefs.h: 477: } word;
+[; ;Include\GenericTypeDefs.h: 478: struct 
+[; ;Include\GenericTypeDefs.h: 479: {
+[; ;Include\GenericTypeDefs.h: 480: BYTE b0:1;
+[; ;Include\GenericTypeDefs.h: 481: BYTE b1:1;
+[; ;Include\GenericTypeDefs.h: 482: BYTE b2:1;
+[; ;Include\GenericTypeDefs.h: 483: BYTE b3:1;
+[; ;Include\GenericTypeDefs.h: 484: BYTE b4:1;
+[; ;Include\GenericTypeDefs.h: 485: BYTE b5:1;
+[; ;Include\GenericTypeDefs.h: 486: BYTE b6:1;
+[; ;Include\GenericTypeDefs.h: 487: BYTE b7:1;
+[; ;Include\GenericTypeDefs.h: 488: BYTE b8:1;
+[; ;Include\GenericTypeDefs.h: 489: BYTE b9:1;
+[; ;Include\GenericTypeDefs.h: 490: BYTE b10:1;
+[; ;Include\GenericTypeDefs.h: 491: BYTE b11:1;
+[; ;Include\GenericTypeDefs.h: 492: BYTE b12:1;
+[; ;Include\GenericTypeDefs.h: 493: BYTE b13:1;
+[; ;Include\GenericTypeDefs.h: 494: BYTE b14:1;
+[; ;Include\GenericTypeDefs.h: 495: BYTE b15:1;
+[; ;Include\GenericTypeDefs.h: 496: BYTE b16:1;
+[; ;Include\GenericTypeDefs.h: 497: BYTE b17:1;
+[; ;Include\GenericTypeDefs.h: 498: BYTE b18:1;
+[; ;Include\GenericTypeDefs.h: 499: BYTE b19:1;
+[; ;Include\GenericTypeDefs.h: 500: BYTE b20:1;
+[; ;Include\GenericTypeDefs.h: 501: BYTE b21:1;
+[; ;Include\GenericTypeDefs.h: 502: BYTE b22:1;
+[; ;Include\GenericTypeDefs.h: 503: BYTE b23:1;
+[; ;Include\GenericTypeDefs.h: 504: BYTE b24:1;
+[; ;Include\GenericTypeDefs.h: 505: BYTE b25:1;
+[; ;Include\GenericTypeDefs.h: 506: BYTE b26:1;
+[; ;Include\GenericTypeDefs.h: 507: BYTE b27:1;
+[; ;Include\GenericTypeDefs.h: 508: BYTE b28:1;
+[; ;Include\GenericTypeDefs.h: 509: BYTE b29:1;
+[; ;Include\GenericTypeDefs.h: 510: BYTE b30:1;
+[; ;Include\GenericTypeDefs.h: 511: BYTE b31:1;
+[; ;Include\GenericTypeDefs.h: 512: BYTE b32:1;
+[; ;Include\GenericTypeDefs.h: 513: BYTE b33:1;
+[; ;Include\GenericTypeDefs.h: 514: BYTE b34:1;
+[; ;Include\GenericTypeDefs.h: 515: BYTE b35:1;
+[; ;Include\GenericTypeDefs.h: 516: BYTE b36:1;
+[; ;Include\GenericTypeDefs.h: 517: BYTE b37:1;
+[; ;Include\GenericTypeDefs.h: 518: BYTE b38:1;
+[; ;Include\GenericTypeDefs.h: 519: BYTE b39:1;
+[; ;Include\GenericTypeDefs.h: 520: BYTE b40:1;
+[; ;Include\GenericTypeDefs.h: 521: BYTE b41:1;
+[; ;Include\GenericTypeDefs.h: 522: BYTE b42:1;
+[; ;Include\GenericTypeDefs.h: 523: BYTE b43:1;
+[; ;Include\GenericTypeDefs.h: 524: BYTE b44:1;
+[; ;Include\GenericTypeDefs.h: 525: BYTE b45:1;
+[; ;Include\GenericTypeDefs.h: 526: BYTE b46:1;
+[; ;Include\GenericTypeDefs.h: 527: BYTE b47:1;
+[; ;Include\GenericTypeDefs.h: 528: BYTE b48:1;
+[; ;Include\GenericTypeDefs.h: 529: BYTE b49:1;
+[; ;Include\GenericTypeDefs.h: 530: BYTE b50:1;
+[; ;Include\GenericTypeDefs.h: 531: BYTE b51:1;
+[; ;Include\GenericTypeDefs.h: 532: BYTE b52:1;
+[; ;Include\GenericTypeDefs.h: 533: BYTE b53:1;
+[; ;Include\GenericTypeDefs.h: 534: BYTE b54:1;
+[; ;Include\GenericTypeDefs.h: 535: BYTE b55:1;
+[; ;Include\GenericTypeDefs.h: 536: BYTE b56:1;
+[; ;Include\GenericTypeDefs.h: 537: BYTE b57:1;
+[; ;Include\GenericTypeDefs.h: 538: BYTE b58:1;
+[; ;Include\GenericTypeDefs.h: 539: BYTE b59:1;
+[; ;Include\GenericTypeDefs.h: 540: BYTE b60:1;
+[; ;Include\GenericTypeDefs.h: 541: BYTE b61:1;
+[; ;Include\GenericTypeDefs.h: 542: BYTE b62:1;
+[; ;Include\GenericTypeDefs.h: 543: BYTE b63:1;
+[; ;Include\GenericTypeDefs.h: 544: } bits;
+[; ;Include\GenericTypeDefs.h: 545: } QWORD_VAL;
+[; ;HardwareProfile.h: 470: BYTE ButtonPressed(void);
+[; ;HardwareProfile.h: 471: void BoardInit(void);
+[; ;HardwareProfile.h: 473: void LCDDisplay(char *, BYTE, BOOL);
+[; ;HardwareProfile.h: 474: void LCDTRXCount(BYTE, BYTE);
+[; ;MiWiPRO.c: 6592: extern char bogusVar;

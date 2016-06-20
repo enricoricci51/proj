@@ -1,0 +1,154 @@
+// *****************************************************************************
+//                                                                              
+//  Software License Agreement                                                  
+//                                                                              
+//  Copyright (c) 2004-2008 Microchip Technology Inc.                           
+//  All rights reserved.                                                        
+//                                                                              
+//  Microchip licenses to you the right to use, copy and distribute Software    
+//  only when embedded on a Microchip microcontroller or digital signal         
+//  controller and used with a Microchip radio frequency transceiver, which     
+//  are integrated into your product or third party product (pursuant to the    
+//  sublicense terms in the accompanying license agreement).  You may NOT       
+//  modify or create derivative works of the Software.                          
+//                                                                              
+//  If you intend to use this Software in the development of a product for      
+//  sale, you must be a member of the ZigBee Alliance.  For more                
+//  information, go to www.zigbee.org.                                          
+//                                                                              
+//  You should refer to the license agreement accompanying this Software for    
+//  additional information regarding your rights and obligations.               
+//                                                                              
+//  SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY     
+//  KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY          
+//  WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A      
+//  PARTICULAR PURPOSE. IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE         
+//  LIABLE OR OBLIGATED UNDER CONTRACT, NEGLIGENCE, STRICT LIABILITY,           
+//  CONTRIBUTION, BREACH OF WARRANTY, OR OTHER LEGAL EQUITABLE THEORY ANY       
+//  DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT LIMITED TO ANY     
+//  INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR CONSEQUENTIAL DAMAGES, LOST      
+//  PROFITS OR LOST DATA, COST OF PROCUREMENT OF SUBSTITUTE GOODS,              
+//  TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES (INCLUDING BUT NOT     
+//  LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.                    
+//                                                                              
+//  8/20/08                                                                     
+//                                                                              
+// *****************************************************************************
+
+// Created by ZENA(TM) Version 3.0.0.0, 3/18/2014, 10:36:48
+
+// This definition file was created for use with the following:
+//     Protocol:            ZigBee 2006 
+//     Processor:           PIC18F4620
+//     Transceiver:         Microchip MRF24J40
+//     ZigBee Device:       Coordinator
+//     Nonvolatile Storage: Program Memory
+
+// ***** Any changes should be made by regenerating the file with ZENA(TM) *****
+
+#ifndef _ZIGBEE_DEF
+#define _ZIGBEE_DEF
+
+
+// PIC Information
+
+#define CLOCK_FREQ 16000000
+#define BAUD_RATE 19200
+#define HEAP_LOCATION 0x0100
+#define MAX_HEAP_SIZE 1792
+
+// SPI and Non-volatile Storage Information
+
+#if !defined(__18F4620)
+    #error Values are for the PIC18F4620. Confirm sizes for target device.
+#endif
+#define WRITE_BLOCK_SIZE (64ul)
+#define ERASE_BLOCK_SIZE (64ul)
+#if ERASE_BLOCK_SIZE > 127
+    #error This device cannot support Program Memory as non-volatile storage. Use serial EEPROM.
+#endif
+// Device has only one SPI
+#define SSPIF_BIT   PIR1bits.SSPIF
+#define WCOL_BIT    SSPCON1bits.WCOL
+#define SSPBUF_REG  SSPBUF
+#define SSPSTAT_REG SSPSTAT
+#define SSPCON1_REG SSPCON1
+
+// Device MAC Address
+
+#define MAC_LONG_ADDR_BYTE7 0x00
+#define MAC_LONG_ADDR_BYTE6 0x04
+#define MAC_LONG_ADDR_BYTE5 0xA3
+#define MAC_LONG_ADDR_BYTE4 0x22
+#define MAC_LONG_ADDR_BYTE3 0x33
+#define MAC_LONG_ADDR_BYTE2 0x21
+#define MAC_LONG_ADDR_BYTE1 0x22
+#define MAC_LONG_ADDR_BYTE0 0x11
+
+// ZigBee Device Information
+
+#define I_AM_COORDINATOR
+#define I_AM_FFD
+#define I_SUPPORT_ROUTING
+#define MY_CAPABILITY_INFO 0x8E
+
+// ZDO Configuration
+
+
+// APS Configuration
+
+#define MAX_APL_FRAMES 9
+#define MAX_APS_ACK_FRAMES 8
+#define MAX_APS_ADDRESSES 8
+#define I_SUPPORT_BINDINGS
+#define NUM_BUFFERED_INDIRECT_MESSAGES 8
+#define MAX_BINDINGS 15
+#define MAX_DUPLICATE_TABLE 21
+#define DUPLICATE_TABLE_EXPIRATION 5
+#define I_SUPPORT_GROUP_ADDRESSING
+#define MAX_GROUP 8
+#define MAX_GROUP_END_POINT 8
+#define MAX_GROUP_RECORD_BUFFER 5
+
+// NWK Configuration
+
+#define MAX_NEIGHBORS 24
+#define NUM_BUFFERED_BROADCAST_MESSAGES 7
+#define ROUTE_DISCOVERY_TABLE_SIZE 4
+#define ROUTING_TABLE_SIZE 16
+#define RESERVED_ROUTING_TABLE_ENTRIES 8
+#define NUM_BUFFERED_ROUTING_MESSAGES 8
+
+// MAC Configuration
+
+#define MAX_ENERGY_THRESHOLD 112
+#define MAC_PIB_macTransactionPersistenceTime 479999    // 7.68 seconds
+#define RX_BUFFER_SIZE 256
+#define RX_BUFFER_LOCATION 0xa00
+#define MAC_PIB_macBeaconOrder 15
+#define MAC_PIB_macSuperframeOrder 15
+#define MAC_PIB_macBattLifeExt FALSE
+
+// Transceiver Information
+
+#define RF_CHIP MRF24J40
+#define MAC_PIB_macAckWaitDuration (54+3)
+#define PHY_CS LATCbits.LATC0
+#define PHY_CS_TRIS TRISCbits.TRISC0
+#define PHY_RESETn LATCbits.LATC2
+#define PHY_RESETn_TRIS TRISCbits.TRISC2
+#define PHY_WAKE LATCbits.LATC1
+#define PHY_WAKE_TRIS TRISCbits.TRISC1
+#define PA_LEVEL 0x00  // -0.00 dBm
+#define FREQUENCY_BAND FB_2400GHz
+#define ALLOWED_CHANNELS 0x07fff800
+
+// Profile and Endpoint Configuration
+
+#define NUM_USER_ENDPOINTS 1
+#define endpoint1 1
+#define MY_MAX_INPUT_CLUSTERS 0
+#define MY_MAX_OUTPUT_CLUSTERS 0
+#include "C:\Microchip Solutions\ZigBee2006Res\Microchip\ZigBeeStack\zHCLighting.h"
+
+#endif
